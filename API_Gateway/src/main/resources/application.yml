@@ -12,19 +12,20 @@ spring:
     gateway:
       mvc:
         routes:
-          - id: User_Service
-            uri: lb://User_Service
-            predicates:
-              - Path=/api/v1/user/**
-          - id: Vehicle_Service
-            uri: lb://Vehicle_Service
-            predicates:
-              - Path=/api/v1/vehicle/**
-          - id: Ticket_Service
-            uri: lb://Ticket_Service
-            predicates:
-              - Path=/api/v1/ticket/**
-          - id: Payment_Service
-            uri: lb://Payment_Service
-            predicates:
-              - Path=/api/v1/payment/**
+          routes:
+            - id: User_Service
+              uri: lb://User_Service
+              predicates:
+                - Path=/api/v1/user/**
+            - id: Vehicle_Service
+              uri: lb://Vehicle_Service
+              predicates:
+                - Path=/api/v1/vehicle/**
+            - id: Ticket_Service
+              uri: lb://Ticket_Service
+              predicates:
+                - Path=/api/v1/ticket/**
+            - id: Payment_Service
+              uri: lb://Payment_Service
+              predicates:
+                - Path=/api/v1/payment/**

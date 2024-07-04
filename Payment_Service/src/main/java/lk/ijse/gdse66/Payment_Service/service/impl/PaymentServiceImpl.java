@@ -26,15 +26,15 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private void setPaidStatus(String ticket_id) {
-        String url = "http://Ticket_Service/api/v1/ticket/updateStatus/" + ticket_id;
-        restTemplate.exchange(url, HttpMethod.PUT, null, String.class);
-    }
-
     @Override
     public void save(PaymentDTO paymentDTO) {
         setPaidStatus(paymentDTO.getTicket_id());
         paymentServiceDAO.save(conversion.convertToEntity(paymentDTO));
+    }
+
+    private void setPaidStatus(String ticket_id) {
+        String url = "http://Ticket_Service/api/v1/ticket/updateStatus/" + ticket_id;
+        restTemplate.exchange(url, HttpMethod.PUT, null, String.class);
     }
 
     @Override

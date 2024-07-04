@@ -14,11 +14,11 @@ public class Conversion {
 
     private final ModelMapper modelMapper;
 
-    public PaymentEntity convertToEntity(PaymentDTO ticketDTO){
+    public PaymentEntity convertToEntity(PaymentDTO ticketDTO) {
         return modelMapper.map(ticketDTO, PaymentEntity.class);
     }
 
-    public List<PaymentDTO> convertToDTOs(List<PaymentEntity> tickets){
+    public List<PaymentDTO> convertToDTOs(List<PaymentEntity> tickets) {
         return modelMapper.map(tickets, List.class);
     }
 }
