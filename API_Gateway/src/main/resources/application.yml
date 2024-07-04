@@ -12,7 +12,15 @@ spring:
     gateway:
       mvc:
         routes:
-          - id: user-service
-            uri: lb://user-service
+          - id: User_Service
+            uri: lb://User_Service
             predicates:
               - Path=/api/v1/user/**
+          - id: Vehicle_Service
+            uri: lb://Vehicle_Service
+            predicates:
+              - Path=/api/v1/vehicle/**
+          - id: Ticket_Service
+            uri: lb://Ticket_Service
+            predicates:
+              - Path=/api/v1/ticket/**

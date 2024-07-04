@@ -1,10 +1,10 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   application:
-    name: User_Service
+    name: Vehicle_Service
   datasource:
-    url: jdbc:mysql://localhost:3306/UserDB?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/VehicleDB?createDatabaseIfNotExist=true
     username: root
     password: ijse123
     driver-class-name: com.mysql.cj.jdbc.Driver

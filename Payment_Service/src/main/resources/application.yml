@@ -1,5 +1,5 @@
 spring:
   application:
-    name: User_Service
+    name: Payment_Service
   config:
     import: "optional:Config_Server:http://localhost:8089"
