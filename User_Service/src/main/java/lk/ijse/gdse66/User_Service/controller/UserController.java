@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/existUser/{userId}")
+    @GetMapping("/existUser/{user_id}")
     public ResponseEntity<?> existUser(@PathVariable String user_id) {
         if (userService.isExistsUser(user_id)){
             return ResponseEntity.ok("User exists");

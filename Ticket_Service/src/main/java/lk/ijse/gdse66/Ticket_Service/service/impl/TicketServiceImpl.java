@@ -49,7 +49,7 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public boolean isExistsUser(String user_id) {
-        String url = "http://user-service/api/v1/user/existUser/" + user_id;
+        String url = "http://User-Service/api/v1/user/existUser/" + user_id;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             return response.getStatusCode() == HttpStatus.OK;
@@ -60,7 +60,7 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public boolean isExistsVehicle(String vehicle_id) {
-        String url = "http://vehicle-service/api/v1/vehicle/existVehicle/" + vehicle_id;
+        String url = "http://Vehicle_Service/api/v1/vehicle/existVehicle/" + vehicle_id;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             return response.getStatusCode() == HttpStatus.OK;

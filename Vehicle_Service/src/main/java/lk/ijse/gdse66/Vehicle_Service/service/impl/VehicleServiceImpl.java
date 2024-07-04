@@ -37,7 +37,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public boolean isExistsUser(String user_id) {
-        String url = "http://user-service/api/v1/user/existUser/" + user_id;
+        String url = "http://User-Service/api/v1/user/existUser/" + user_id;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
 
