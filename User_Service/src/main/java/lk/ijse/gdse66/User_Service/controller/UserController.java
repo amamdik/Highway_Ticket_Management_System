@@ -13,16 +13,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
-
-    @GetMapping("/existUser/{user_id}")
-    public ResponseEntity<?> existUser(@PathVariable String user_id) {
-        if (userService.isExistsUser(user_id)){
-            return ResponseEntity.ok("User exists");
-        }else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User does not exist");
-        }
-    }
-
     @PostMapping(value = "/save",consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> save(@RequestBody UserDTO userDTO) {
         userService.save(userDTO);
